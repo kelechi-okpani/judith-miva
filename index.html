@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofoegbu Judith | MIVA Student Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">JUDITH <span>OFOEGBU</span></div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html">Academic Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="glass-card hero-card">
+      <div class="profile-img-container">
+        <img src="images/profile.jpeg" alt="Ofoegbu Judith Photograph" class="profile-img">
+      </div>
+      <div class="hero-bio">
+        <span class="badge">Computer Science Student • Abuja, Nigeria</span>
+        <h1>Hello! I&apos;m <span style="background: linear-gradient(135deg, var(--accent-rose), var(--accent-lavender)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Ofoegbu Judith</span></h1>
+        <p style="color: var(--text-muted);">
+          Welcome to my academic portfolio! I am a student at MIVA Open University studying Computer Science. I am adaptable, motivated, and passionate about continuous learning, creativity, and building technological solutions that help people.
+        </p>
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap;">
+          <a href="about.html" class="btn">Read My Bio</a>
+          <a href="planner.html" class="btn btn-secondary">Academic Planner</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="grid-2">
+      <article class="glass-card">
+        <h3>Audio Welcome Note</h3>
+        <p style="color: var(--text-muted); margin: 0.75rem 0 1.25rem; font-size: 0.9rem;">Listen to my voice overview of my academic background and career goals at MIVA University.</p>
+        <audio controls style="width: 100%; border-radius: 8px;">
+          <source src="audio/welcome-note.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </article>
+
+      <article class="glass-card">
+        <h3>Current Leadership & Roles</h3>
+        <ul style="list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.75rem;">
+          <li style="background: rgba(255, 255, 255, 0.02); padding: 0.85rem 1rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+            <strong style="color: var(--accent-rose); font-size: 0.95rem;">Media Team Lead</strong>
+            <span style="display: block; color: var(--text-muted); font-size: 0.8rem;">Feed The Future Movement (Sept 2024 – Present)</span>
+          </li>
+          <li style="background: rgba(255, 255, 255, 0.02); padding: 0.85rem 1rem; border-radius: 12px; border: 1px solid var(--glass-border);">
+            <strong style="color: var(--accent-lavender); font-size: 0.95rem;">Project Manager</strong>
+            <span style="display: block; color: var(--text-muted); font-size: 0.8rem;">Ideation Hive (June 2024 – Present)</span>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MIVA Open University. All Rights Reserved. | COS 106 Term Project</p>
+  </footer>
+
+  <script src="js/background.js"></script>
+</body>
+</html>
