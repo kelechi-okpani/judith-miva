@@ -3,26 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Student Portfolio</title>
+  <title>Contact | Ofoegbu Judith</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header>
-    <div class="nav-container">
-   <div class="logo">JUDITH <span>OFOEGBU</span></div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="planner.html">Academic Planner</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="nav-container">
+    <div class="logo">JUDITH <span>OFOEGBU</span></div>
+    
+    <!-- 1. Hamburger Toggle Button -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Academic Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <main style="max-width: 600px;">
     <section style="margin-bottom: 2rem;">
@@ -71,6 +79,28 @@
     <p>&copy; 2025 MIVA Open University. All Rights Reserved. | COS 106 Term Project</p>
   </footer>
 
+  <script src="js/background.js"></script>
   <script src="js/validation.js"></script>
 </body>
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+
+    // Close menu when clicking on any link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  }
+</script>
 </html>

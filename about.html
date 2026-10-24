@@ -9,20 +9,28 @@
 </head>
 <body>
 
-  <header>
-    <div class="nav-container">
-      <div class="logo">JUDITH <span>OFOEGBU</span></div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About Me</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="planner.html">Academic Planner</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="nav-container">
+    <div class="logo">JUDITH <span>OFOEGBU</span></div>
+    
+    <!-- 1. Hamburger Toggle Button -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Academic Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <main>
     <section style="margin-bottom: 2rem;">
@@ -115,4 +123,25 @@
 
   <script src="js/background.js"></script>
 </body>
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+
+    // Close menu when clicking on any link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  }
+</script>
 </html>

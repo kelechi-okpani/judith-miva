@@ -9,36 +9,42 @@
 </head>
 <body>
 
-  <!-- Glassmorphic Header & Navigation -->
-  <header>
-    <div class="nav-container">
-      <div class="logo">JUDITH <span>OFOEGBU</span></div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-          <li><a href="projects.html" class="active">Projects</a></li>
-          <li><a href="planner.html">Academic Planner</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- Header -->
+<header>
+  <div class="nav-container">
+    <div class="logo">JUDITH <span>OFOEGBU</span></div>
+    
+    <!-- 1. Hamburger Toggle Button -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  <!-- Main Content Area -->
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Academic Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
   <main>
     <section style="margin-bottom: 2rem;">
       <h2>Featured Project</h2>
       <p style="color: var(--text-muted);">The primary coursework project demonstrating modern web technologies and responsive design.</p>
     </section>
 
-    <!-- Single Project Showcase Card -->
-    <section style="max-width: 800px; margin: 0 auto;">
+    <section style="max-width: 800px; margin: 0 auto; width: 100%;">
       <article class="glass-card project-card">
         <img src="images/Portfolio.png" alt="Student Portfolio and Academic Management Website Screenshot">
-        <div class="project-content" style="padding: 2rem;">
+        <div class="project-content">
           <span class="badge" style="margin-bottom: 0.5rem;">COS 106 Term Project</span>
-          <h3 style="font-size: 1.5rem; color: var(--text-main);">Student Portfolio & Academic Management Website</h3>
+          <h3 style="font-size: 1.4rem; color: var(--text-main);">Student Portfolio & Academic Management Website</h3>
           <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-top: 0.5rem;">
             A responsive, multi-page web platform designed to showcase my academic profile, professional background, skills, and interactive academic task management. Built with semantic HTML5, glassmorphic CSS3 styling with flexbox/grid layouts, dynamic particle background animations, and vanilla JavaScript DOM manipulation for task tracking and form validation.
           </p>
@@ -56,7 +62,7 @@
             </ul>
           </div>
 
-          <div style="margin-top: 2rem; display: flex; gap: 1.25rem; font-size: 0.95rem; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 1.25rem;">
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem; font-size: 0.95rem; align-items: center; border-top: 1px solid var(--glass-border); padding-top: 1.25rem; flex-wrap: wrap;">
             <a href="index.html" class="btn">Explore Live Site &rarr;</a>
             <a href="https://github.com" target="_blank" style="color: var(--text-muted); font-weight: 500;">GitHub Repository</a>
           </div>
@@ -65,12 +71,31 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 MIVA Open University. All Rights Reserved. | COS 106 Term Project</p>
   </footer>
 
-  <!-- Floating Canvas Animation Script -->
   <script src="js/background.js"></script>
 </body>
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+
+    // Close menu when clicking on any link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  }
+</script>
 </html>

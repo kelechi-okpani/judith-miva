@@ -7,23 +7,32 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Navigation -->
-  <header>
-    <div class="nav-container">
-      <div class="logo">JUDITH <span>OFOEGBU</span></div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="planner.html">Academic Planner</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- Navigation Header -->
+<header>
+  <div class="nav-container">
+    <div class="logo">JUDITH <span>OFOEGBU</span></div>
+    
+    <!-- 1. Hamburger Toggle Button -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Academic Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <main>
     <!-- Hero Section -->
@@ -33,11 +42,11 @@
       </div>
       <div class="hero-bio">
         <span class="badge">Computer Science Student • Abuja, Nigeria</span>
-        <h1>Hello! I&apos;m <span style="background: linear-gradient(135deg, var(--accent-rose), var(--accent-lavender)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Ofoegbu Judith</span></h1>
+        <h1>Hello! I'm <span style="background: linear-gradient(135deg, var(--accent-rose), var(--accent-lavender)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Ofoegbu Judith</span></h1>
         <p style="color: var(--text-muted);">
           Welcome to my academic portfolio! I am a student at MIVA Open University studying Computer Science. I am adaptable, motivated, and passionate about continuous learning, creativity, and building technological solutions that help people.
         </p>
-        <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap;">
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap; justify-content: inherit;">
           <a href="about.html" class="btn">Read My Bio</a>
           <a href="planner.html" class="btn btn-secondary">Academic Planner</a>
         </div>
@@ -77,4 +86,29 @@
 
   <script src="js/background.js"></script>
 </body>
+
+<!-- 2. Hamburger Toggle Script -->
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+
+    // Close menu when clicking on any link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  }
+</script>
+
 </html>
